@@ -18,7 +18,13 @@ import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-ap
 import{getAuth,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,updateProfile}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import{getFirestore,collection,doc,getDoc,getDocs,addDoc,setDoc,query,where}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 /* Firebase Console > Project settings > Your apps থেকে নিজের Web App config বসান। */
-const firebaseConfig={apiKey:"PASTE_YOUR_FIREBASE_API_KEY",authDomain:"bazar-mela.firebaseapp.com",projectId:"bazar-mela",storageBucket:"bazar-mela.firebasestorage.app",messagingSenderId:"634216623730",appId:"1:634216623730:web:5f54a39974b45fa2551ceb"};
+const firebaseConfig={apiKey: "AIzaSyA602QlbohvpJpDpZLiX1r0ybsr00bau4Y",
+  authDomain: "bazar-mela.firebaseapp.com",
+  projectId: "bazar-mela",
+  storageBucket: "bazar-mela.firebasestorage.app",
+  messagingSenderId: "634216623730",
+  appId: "1:634216623730:web:5f54a39974b45fa2551ceb"
+};
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),$=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let user=null,products=[],categories=[],cart=JSON.parse(localStorage.getItem("bm_cart")||"[]"),activeCat="all";
